@@ -29,10 +29,9 @@ export default function Map() {
  <div className="map_button">
   <button
             className="hover_external_btn_map"
-            onClick={() => {
-              const element = document.getElementById("home");
-              if (element) element.scrollIntoView({ behavior: "smooth" });
-            }}
+           onClick={() => {
+  window.open("https://goo.gl/maps/TLCbztQL329H1WkP8", "_blank");
+}}
           >
             VIEW ON GOOGLE MAPS
           </button>
