@@ -6,7 +6,7 @@ import { FaPlane, FaGlobe, FaMedkit, FaSchool, FaHouseUser, FaMoneyBill, FaWalki
 export default function Future() {
     return (
         <>
-            <section className="about-one future_styling" id="live-the-vibrant-lifestyle-at-dubai-hills-estate">
+            <section className="about-one future_styling" id="live-the-vibrant">
                 {/* <div className="shape1 float-bob-y"><img src="assets/img/shape/about-v1-shape1.png" alt=""/></div> */}
                 <div className="container banner_container_main_except component_container">
                     <div className="row minus_styling">

@@ -40,6 +40,7 @@ export default function Banner() {
      const [countryValue, setCountryValue] = useState('');
   const [originValue, setOriginValue] = useState('');
     const [phoneError, setPhoneError] = useState('')
+    const [defaultCountry, setDefaultCountry] = useState("ae"); // default = Dubai
     const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -61,6 +62,19 @@ export default function Banner() {
       }
     } else {
       setOriginValue('');
+    }
+    
+if (country) {
+      const countryMap = {
+        india: "in",
+        uk: "gb",
+        ae: "ae",
+      };
+
+      const mapped = countryMap[country.toLowerCase()];
+      if (mapped) setDefaultCountry(mapped);
+
+      console.log("debugging idnia", mapped)
     }
 
     if (country) {
@@ -317,7 +331,7 @@ IN DUBAI’S MOST SOUGH-AFTER LOCATIONS.</p>
       </label>
         <PhoneInput
   name="phone"
-  country={"ae"}
+  country={defaultCountry}
   value={formData.phone}
   onChange={(value) =>
     setFormData({
