@@ -72,7 +72,7 @@ export default function Banner() {
       if (normalized === "india") {
         setPrice("₹38.24L.*");
       } else if (["uk", "ireland"].includes(normalized)) {
-        setPrice("GBP 324,000.*");
+        setPrice("GBP 324K.*");
       } else {
         setPrice("AED 1.6M.*");
       }
@@ -279,7 +279,7 @@ IN DUBAI’S MOST SOUGH-AFTER LOCATIONS.</p>
       <div className='resp_usd'>
         <p className="down_styling">
   *USD 436,000 / EUR 375,000 {!["uk", "ireland", "unitedkingdom", "britain"].includes(country) && (
-        <span className="line-break">/ GBP 324,000</span>
+        <span className="line-break">/ GBP 324K.*</span>
       )}
 </p>
 
