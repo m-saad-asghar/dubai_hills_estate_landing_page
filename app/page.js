@@ -27,8 +27,8 @@ export default function Home() {
                  <About />
                  <TeamsListing/>
                  <Future/>
-                {/* <Features /> */}
-                {/* <Services /> */}
+                <Features />
+                <Services />
                 <Map/>
                 {/* <ContactForm/> */}
                 <Footer1/>

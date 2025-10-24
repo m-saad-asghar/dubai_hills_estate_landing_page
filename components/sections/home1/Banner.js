@@ -211,8 +211,8 @@ export default function Banner() {
 
                     <Link href="/" passHref className='logo_styling'>
   <Image
-    src="/assets/icon/dubai_hills_estate.png"
-    alt="dubai_hills_estate"
+    src="/assets/icon/emaar_logo.png"
+    alt="Emaar Logo"
     height={55}
     width={300}
     style={{ height: "55px", width: "auto" }}

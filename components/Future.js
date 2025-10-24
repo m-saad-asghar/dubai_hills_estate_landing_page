@@ -183,10 +183,8 @@ export default function Future() {
                                     </div>
                 
                                 </div>
-                            </div>
-                        </div>
 
-                        <div className="amenities_container">
+                                    <div className="amenities_container">
   <Image
     src="/assets/img/exceptional_image.jpg"
     alt="Amenities Image"
@@ -199,6 +197,9 @@ export default function Future() {
     }}
   />
 </div>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>
