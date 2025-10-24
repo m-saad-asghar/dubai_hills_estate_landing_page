@@ -79,16 +79,16 @@ export default function Footer1() {
                             </div> */}
 
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 wow fadeInUp qr_container" data-wow-delay=".2s">
-                                {/* <div className="single-footer-widget footer-widget__links">
+                                <div className="single-footer-widget footer-widget__links">
                                     <Image
-    src="/assets/logo/dubai_creek_harbour.png"
+    src="/assets/logo/dubai_hills_estate_qr_code.jpeg"
     alt="qr_code"
     height={100}
     width={150}
     style={{ height: "100px", width: "auto" }}
   />
 
-                                </div> */}
+                                </div>
                             </div>
 
                         </div>
