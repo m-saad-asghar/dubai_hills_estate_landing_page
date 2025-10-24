@@ -36,11 +36,13 @@ export default function Banner() {
     const [isOpen, setOpen] = useState(false)
     const [keepUpdated, setKeepUpdated] = useState(true);
      const [disableBtn, setDisableBtn] = useState(false);
+     const [price, setPrice] = useState("AED 1.6M.*");
      const searchParams = useSearchParams();
      const [countryValue, setCountryValue] = useState('');
   const [originValue, setOriginValue] = useState('');
     const [phoneError, setPhoneError] = useState('')
     const [defaultCountry, setDefaultCountry] = useState("ae"); // default = Dubai
+    const country = searchParams.get('country');
     const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -63,18 +65,29 @@ export default function Banner() {
     } else {
       setOriginValue('');
     }
+
+    if (country) {
+      const normalized = country.toLowerCase().replace(/\s+/g, "");
+
+      if (normalized === "india") {
+        setPrice("₹38.24L.*");
+      } else if (["uk", "ireland"].includes(normalized)) {
+        setPrice("GBP 324,000.*");
+      } else {
+        setPrice("AED 1.6M.*");
+      }
+    }
     
 if (country) {
       const countryMap = {
         india: "in",
         uk: "gb",
+        ireland: "gb",
         ae: "ae",
       };
 
       const mapped = countryMap[country.toLowerCase()];
       if (mapped) setDefaultCountry(mapped);
-
-      console.log("debugging idnia", mapped)
     }
 
     if (country) {
@@ -239,7 +252,7 @@ if (country) {
         <div className='banner_text_container'>
           <p className='heading_middle heading'>DUBAI HILLS ESTATE</p>
           <h1 className="heading_middle sub_heading">
-  Luxury Homes Starting from <span className="line-break">AED 1.6M.*</span>
+  Luxury Homes Starting from <span className="line-break">{price}</span>
 </h1>
 
         <p className='heading_middle content'>EARN EXCEPTIONAL RETURNS ON YOUR PROPERTY INVESTMENT
@@ -265,7 +278,9 @@ IN DUBAI’S MOST SOUGH-AFTER LOCATIONS.</p>
       </div>
       <div className='resp_usd'>
         <p className="down_styling">
-  *USD 436,000 / EUR 375,000 / <span className="line-break">GBP 324,000</span>
+  *USD 436,000 / EUR 375,000 {!["uk", "ireland", "unitedkingdom", "britain"].includes(country) && (
+        <span className="line-break">/ GBP 324,000</span>
+      )}
 </p>
 
       </div>

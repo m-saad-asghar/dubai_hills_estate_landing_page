@@ -33,11 +33,11 @@ export default function ThankYou() {
     };
   }, [router]);
 
-  // useEffect(() => {
-  //   if (window.fbq) {
-  //     window.fbq("track", "Lead");
-  //   }
-  // }, []);
+  useEffect(() => {
+    if (window.fbq) {
+      window.fbq("track", "Lead");
+    }
+  }, []);
 
   return (
     <>
@@ -95,17 +95,17 @@ export default function ThankYou() {
       </div>
     </div>
      {/* ✅ Google Analytics Event Script */}
-      {/* <Script id="lead-submission-dch-en" strategy="afterInteractive">
+     <Script id="lead-submission-dubai-hills-en" strategy="afterInteractive">
       {`
-        window.gtag('event', 'lead_submission_dch_en', {
+        window.gtag('event', 'lead_submission_dubai_estate_hills_en', {
           lead_language: 'english',
-          project_name: 'dubai_creek_harbour',
-          landing_page: 'dch_en',
+          project_name: 'duba_estate_hills',
+          landing_page: 'deh_en',
           currency: 'AED',
-          value: 150
+          value: 250
         });
       `}
-    </Script> */}
+    </Script>
       </>
   );
 }

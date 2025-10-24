@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
             <head>
 
               {/* Google Analytics */}
-        {/* <Script
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-85BT7ZFTFS"
           strategy="afterInteractive"
         />
@@ -29,10 +29,10 @@ export default function RootLayout({ children }) {
             gtag('js', new Date());
             gtag('config', 'G-85BT7ZFTFS');
           `}
-        </Script> */}
+        </Script>
 
       {/* Meta Pixel Code */}
-        {/* <Script
+        <Script
           id="facebook-pixel"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
               fbq('track', 'PageView');
             `,
           }}
-        /> */}
+        />
         {/* End Meta Pixel Code */}
       </head>
             <body>
