@@ -8,7 +8,7 @@ import 'swiper/css/free-mode';
 import { dM_Sans, } from '@/lib/font'
 import { Toaster } from 'react-hot-toast';
 export const metadata = {
-    title: 'Dubai Creek Harbour EN - EMAAR',
+    title: 'Dubai Hills Estate EN - EMAAR',
     description: 'Project by Emaar',
 }
 
