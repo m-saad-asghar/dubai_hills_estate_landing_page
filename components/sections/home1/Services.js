@@ -20,7 +20,7 @@ export default function Features() {
                                     </p>
                                 </div>
                 <div className="sec-title" style={{marginTop: 15, paddingBottom: 0}}>
-                                    <h2 className="why_invest">WHY EMAAR DUBAI HILLS ESTATE?</h2>
+                                    <h2 className="why_invest">WHY EMAAR?</h2>
                                 </div>
                                 <p className="about_paragraph services_cont">
                                     <span className="about_paragraph_span">Discover the offerings of Dubai Hills Estate, a sprawling 2,700-acre multi-purpose development that includes an impressive championship golf course, expansive parks and open spaces, and the iconic Dubai Hills Park. Enjoy the shopping experience at Dubai Hills Mall and ensure access to quality education with nearby schools. Navigate the community seamlessly with a dedicated bicycle route, and experience world-class golfing at the renowned Dubai Hills Golf Club. These amenities collectively shape the unique and vibrant lifestyle within Dubai Hills Estate.</span>

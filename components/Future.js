@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link"
 import Image from "next/image";
-import { FaBuilding, FaCity, FaDollarSign, FaGift, FaHouseUser, FaTree } from "react-icons/fa";
+import { FaPlane, FaGlobe, FaMedkit, FaSchool, FaHouseUser, FaMoneyBill, FaWalking, FaMap, FaShieldAlt, FaChartLine, FaIdCard, FaLightbulb, FaGift, FaCity, FaGolfBall, FaTree, FaStore, FaBiking } from "react-icons/fa";
+
 export default function Future() {
     return (
         <>
@@ -30,85 +31,178 @@ export default function Future() {
 </p>
                                 </div>
 
-                                <div className="row future_row">
-                                
-                                                    {/* <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                                        <div className="feauture-one__single" 
-                                                        >
-                                                            <div className="feauture-one__single-text">
-                                
-                                                              <div className="feauture-one__single-bottom">
-                                                                <div className="icon-box">
-                                                                    <span className="icon-plane">
-                                <FaBuilding className="icon-plane" size={30}/> 
-                                                                    </span>
-                                                                    
-                                                                </div>
-                                                            </div>
-
-                                <h3 className="investment_content">
-<span className="investment_content_para">711,399 sqm</span></h3>
-                                
-                                <p className="investment_text">
-    <span className="about_paragraph_span">Serviced Apartments.</span>
-</p>
-                                                            </div>
-                                                        </div>
-                                                    </div> */}
-                                                  {/* <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                                        <div className="feauture-one__single" 
-                                                        >
-                                                            <div className="feauture-one__single-text">
-                                
-                                                              <div className="feauture-one__single-bottom">
-                                                                <div className="icon-box">
-                                                                    <span className="icon-plane">
-                                <FaCity className="icon-plane" size={30}/> 
-                                                                    </span>
-                                                                    
-                                                                </div>
-                                                            </div>
-
-                                <h3 className="investment_content">
-<span className="investment_content_para">7.4 million sqm</span></h3>
-                            
-                                <p className="investment_text">
-    <span className="about_paragraph_span">Residential Space.</span>
-</p>
-                                                            </div>
-                                                        </div>
-                                                    </div> */}
-                                
-                                                     {/* <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                                        <div className="feauture-one__single" 
-                                                        >
-                                                            <div className="feauture-one__single-text">
-                                
-                                                              <div className="feauture-one__single-bottom">
-                                                                <div className="icon-box">
-                                                                    <span className="icon-plane">
-                                <FaTree className="icon-plane" size={30}/> 
-                                                                    </span>
-                                                                    
-                                                                </div>
-                                                            </div>
-
-<h3 className="investment_content">
-<span className="investment_content_para">500,000 sqm</span></h3>
-                                
-                                <p className="investment_text">
-    <span className="about_paragraph_span">Parks & Open Spaces.</span>
-</p>
-                                                            </div>
-                                                        </div>
-                                                    </div> */}
-                                
+                              <div className="row feature_row">
+                                  <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div className="feauture-one__single" 
+                                        // style={{minHeight: 250}}
+                                        >
+                                            <div className="feauture-one__single-text">
+                
+                                              <div className="feauture-one__single-bottom">
+                                                <div className="icon-box">
+                                                    <span className="icon-plane">
+                <FaGolfBall className="icon-plane" size={30}/> 
+                                                    </span>
+                                                    
                                                 </div>
+                                            </div>
+                
+                                                <h2 className="investment_content">
+                <a href="javascript:void(0);">18-Hole</a></h2>
+                <p className="investment_text">
+                  <span className="about_para_span">Championship Golf Course.</span>
+                </p> 
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div className="feauture-one__single" 
+                                        // style={{minHeight: 250}}
+                                        >
+                                            <div className="feauture-one__single-text">
+                
+                                              <div className="feauture-one__single-bottom">
+                                                <div className="icon-box">
+                                                    <span className="icon-plane">
+                <FaTree className="icon-plane" size={30}/> 
+                                                    </span>
+                                                    
+                                                </div>
+                                            </div>
+                
+                                                <h2 className="investment_content">
+                <a href="javascript:void(0);">
+                1,450,000 sqm</a></h2>
+                
+                <p className="investment_text">
+                  <span className="about_para_span">Parks & Open Spaces.</span>
+                </p> 
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div className="feauture-one__single" 
+                                        // style={{minHeight: 250}}
+                                        >
+                                            <div className="feauture-one__single-text">
+                
+                                              <div className="feauture-one__single-bottom">
+                                                <div className="icon-box">
+                                                    <span className="icon-plane">
+                <FaWalking className="icon-plane" size={30}/> 
+                                                    </span>
+                                                    
+                                                </div>
+                                            </div>
+                
+                                                <h2 className="investment_content">
+                <a href="javascript:void(0);">180,000 sqm</a></h2>
+                <p className="investment_text">
+                  <span className="about_para_span">Dubai Hills Park.</span>
+                </p>
+                
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div className="feauture-one__single" style={{paddingTop: 0}} 
+                                        // style={{minHeight: 250}}
+                                        >
+                                            <div className="feauture-one__single-text">
+                
+                                              <div className="feauture-one__single-bottom">
+                                                <div className="icon-box">
+                                                    <span className="icon-plane">
+                <FaStore className="icon-plane" size={30}/> 
+                                                    </span>
+                                                    
+                                                </div>
+                                            </div>
+                
+                                                <h2 className="investment_content">
+                <a href="javascript:void(0);">
+                282,000 sqm</a></h2>
+                
+                <p className="investment_text">
+                  <span className="about_para_span">Dubai Hills Mall.</span>
+                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div className="feauture-one__single" style={{paddingTop: 0}}
+                                        // style={{minHeight: 250}}
+                                        >
+                                            <div className="feauture-one__single-text">
+                
+                                              <div className="feauture-one__single-bottom">
+                                                <div className="icon-box">
+                                                    <span className="icon-plane">
+                <FaSchool className="icon-plane" size={30}/> 
+                                                    </span>
+                                                    
+                                                </div>
+                                            </div>
+                
+                                                <h2 className="investment_content">
+                <a href="javascript:void(0);">3</a></h2>
+                
+                <p className="investment_text">
+                  <span className="about_para_span">Schools.</span>
+                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                                        <div className="feauture-one__single"  style={{paddingTop: 0}}
+                                        // style={{minHeight: 250}}
+                                        >
+                                            <div className="feauture-one__single-text">
+                
+                                              <div className="feauture-one__single-bottom">
+                                                <div className="icon-box">
+                                                    <span className="icon-plane">
+                <FaBiking className="icon-plane" size={30}/> 
+                                                    </span>
+                                                    
+                                                </div>
+                                            </div>
+                
+                                                <h2 className="investment_content">
+                <a href="javascript:void(0);">54 km</a></h2>
+                <p className="investment_text">
+                  <span className="about_para_span">Bicycle Route.</span>
+                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                </div>
                             </div>
                         </div>
 
+                        <div className="amenities_container">
+  <Image
+    src="/assets/img/exceptional_image.jpg"
+    alt="Amenities Image"
+    width={1920} // can be any large width
+    height={1080}
+    style={{
+      width: "100%",
+      height: "auto",
+      objectFit: "cover",
+    }}
+  />
+</div>
+
                     </div>
                 </div>
+
 
                 <div className="btn_style">
   <button

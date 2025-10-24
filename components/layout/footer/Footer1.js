@@ -20,14 +20,14 @@ export default function Footer1() {
   <Image
     src="/assets/img/shiro_images/logo.png"
     alt="shiro_logo"
-    height={50}
+    height={30}
     width={300} // adjust based on your logo’s aspect ratio
     style={{ height: "50px", width: "auto" }}
   />
 </Link>
                                     </div>
 
-                                    <div className="footer-widget__about-inner footer_spacing">
+                                    {/* <div className="footer-widget__about-inner footer_spacing">
                                         <div className="text-box centerize">
                                             <p style={{color: "#ffffff"}}>Office No. 2101, 21st Floor, Boulevard Plaza Tower 1,  
                                                  Downtown, Dubai, UAE</p>
@@ -37,21 +37,7 @@ export default function Footer1() {
   <span className="contact-separator seperater">|</span>
   <a href="mailto:info@shiroestate.ae">info@shiroestate.ae</a>
 </div>
-
-
-                                       {/* <div className="number-box">
- <a href="mailto:info@shiroestate.ae">info@shiroestate.ae</a>
-
-</div> */}
-
-
-                                        {/* <div className="footer-social-link">
-                                            <Link href="#">tw</Link>
-                                            <Link href="#">in</Link>
-                                            <Link href="#">db</Link>
-                                            <Link href="#">ig</Link>
-                                        </div> */}
-                                    </div>
+                                    </div> */}
 
                                     <div className="footer-widget__about-inner footer_spacing privacy_policy_footer">
                                         <div className="number-box centerize">
@@ -79,7 +65,7 @@ export default function Footer1() {
                             </div> */}
 
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 wow fadeInUp qr_container" data-wow-delay=".2s">
-                                <div className="single-footer-widget footer-widget__links">
+                                <div className="single-footer-widget footer-widget__links footer_address">
                                     <Image
     src="/assets/logo/dubai_hills_estate_qr_code.jpeg"
     alt="qr_code"

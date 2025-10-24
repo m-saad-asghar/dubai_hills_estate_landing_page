@@ -20,22 +20,13 @@ export default function Map() {
                                     </p>
                                 </div>
                 <div className="sec-title" style={{marginTop: 15, paddingBottom: 0}}>
-                                    <h2 className="why_invest">DUBAI HILLS ESTATE MAP</h2>
+                                    <h2 className="why_invest">DUBAI MAP</h2>
                                 </div>
                             
             </div>
 
-            <div className="map_background">
- <div className="map_button">
-  <button
-            className="hover_external_btn_map"
-           onClick={() => {
-  window.open("https://goo.gl/maps/TLCbztQL329H1WkP8", "_blank");
-}}
-          >
-            VIEW ON GOOGLE MAPS
-          </button>
-</div>
+           <div className="map_background">
+
             </div>
 
             <div className="btn_style_map">

@@ -23,9 +23,8 @@ export default function  Features() {
                                 </div>
                 <div className="row feature_row">
 
-                    <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    {/* <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div className="feauture-one__single" style={{marginBottom: 0}} 
-                        // style={{minHeight: 250}}
                         >
                             <div className="feauture-one__single-text">
 
@@ -46,8 +45,8 @@ export default function  Features() {
 </p> 
                             </div>
                         </div>
-                    </div>
-                  <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                    </div> */}
+                  <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div className="feauture-one__single" 
                         // style={{minHeight: 250}}
                         >
@@ -71,7 +70,7 @@ export default function  Features() {
                         </div>
                     </div>
 
-                     <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div className="feauture-one__single" 
                         // style={{minHeight: 250}}
                         >
@@ -97,7 +96,7 @@ export default function  Features() {
                         </div>
                     </div>
 
-                     <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div className="feauture-one__single" 
                         // style={{minHeight: 250}}
                         >
@@ -122,7 +121,7 @@ export default function  Features() {
                         </div>
                     </div>
 
-                     <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div className="feauture-one__single" style={{paddingTop: 0}} 
                         // style={{minHeight: 250}}
                         >
@@ -148,7 +147,7 @@ export default function  Features() {
                         </div>
                     </div>
 
-                     <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div className="feauture-one__single" style={{paddingTop: 0}}
                         // style={{minHeight: 250}}
                         >
@@ -173,7 +172,7 @@ export default function  Features() {
                         </div>
                     </div>
 
-                     <div className="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                     <div className="col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4 wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                         <div className="feauture-one__single"  style={{paddingTop: 0}}
                         // style={{minHeight: 250}}
                         >

@@ -320,6 +320,11 @@ padding-left: 130px !important;
     padding-top: 20px;
 }
 
+.amenities_container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
 .seperater {
         margin-right: 20px;
     margin-left: 20px;
@@ -368,6 +373,12 @@ font-size: 15px !important;
   display: inline;
 }
 
+.footer_address {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
 .about_paragraph_span {
     font-style: normal;
     font-size: 16px !important;
@@ -376,13 +387,13 @@ font-size: 15px !important;
     font-weight: 300 !important;
 }
 .privacy_policy_footer {
-    margin-top: 13px !important;
+    margin-top: 20px !important;
 }
 
 .map_background {
         display: block;
     background: rgba(255, 255, 255, 0);
-    background-image: url(https://cdn.properties.emaar.com/wp-content/uploads/2020/04/DHE_MAP-e1676029935294.jpg);
+    background-image: url(//d9hhrg4mnvzow.cloudfront.net/property.emaar.com/en/investment/8ddecfc4-emaar-map-web-v2-02.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -8668,7 +8679,7 @@ Project Four Css
     }
 
     .privacy_policy_footer {
-    margin-top: 13px !important;
+    margin-top: 40px !important;
 }
 
     .qr_container {
