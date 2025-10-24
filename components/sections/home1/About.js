@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function About() {
     return (
         <>
-            <section className="about-one about_spacing" id="welcome-to-dubai-creek-harbour">
+            <section className="about-one about_spacing" id="welcome-to-dubai-hills-estate">
                 {/* <div className="shape1 float-bob-y"><img src="assets/img/shape/about-v1-shape1.png" alt=""/></div> */}
                 <div className="container banner_container_main_except component_container">
                     <div className="row">
