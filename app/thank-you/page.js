@@ -104,50 +104,18 @@ export default function ThankYou() {
         </div>
       </div>
     </div>
-      {/* 🇮🇳 India */}
-      {country === "india" && (
-        <Script id="lead-submission-dhe-ind-en" strategy="afterInteractive">
-          {`
-            window.gtag('event', 'lead_submission_dhe_ind_en', {
-              lead_language: 'english',
-              project_name: 'dubai_hills_estate',
-              landing_page: 'dhe_en',
-              currency: 'AED',
-              value: 301
-            });
-          `}
-        </Script>
-      )}
-
-      {/* 🇬🇧 UK */}
-      {(country === "uk") && (
-        <Script id="lead-submission-dhe-uk-en" strategy="afterInteractive">
-          {`
-            window.gtag('event', 'lead_submission_dhe_uk_en', {
-              lead_language: 'english',
-              project_name: 'dubai_hills_estate',
-              landing_page: 'dhe_en',
-              currency: 'AED',
-              value: 302
-            });
-          `}
-        </Script>
-      )}
-
-      {/* 🇮🇪 Ireland */}
-      {country === "ireland" && (
-        <Script id="lead-submission-dhe-ir-en" strategy="afterInteractive">
-          {`
-            window.gtag('event', 'lead_submission_dhe_ir_en', {
-              lead_language: 'english',
-              project_name: 'dubai_hills_estate',
-              landing_page: 'dhe_en',
-              currency: 'AED',
-              value: 303
-            });
-          `}
-        </Script>
-      )}
+      
+      <Script id="lead-submission-dhe-en" strategy="afterInteractive">
+{`
+  window.gtag('event', 'lead_submission_dhe_en', {
+    lead_language: 'english',
+    project_name: 'dubai_hills_estate',
+    landing_page: 'dhe_en',
+    currency: 'AED',
+    value: 305
+  });
+`}
+</Script>
     
       </>
   );
