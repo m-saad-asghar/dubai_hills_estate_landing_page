@@ -70,7 +70,7 @@ export default function Banner() {
       const normalized = country.toLowerCase().replace(/\s+/g, "");
 
       if (normalized === "india") {
-        setPrice("₹3.83 Cr.*");
+        setPrice("₹3.83Cr.*");
       } else if (["uk", "ireland"].includes(normalized)) {
         setPrice("GBP 324K.*");
       } else {
