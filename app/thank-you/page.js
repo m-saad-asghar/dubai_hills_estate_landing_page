@@ -8,6 +8,7 @@ import Script from 'next/script';
 export default function ThankYou() {
   const router = useRouter();
   const [progress, setProgress] = useState(0);
+  const [country, setCountry] = useState("");
 
   useEffect(() => {
     const interval = 50; // update every 50ms
@@ -38,6 +39,15 @@ export default function ThankYou() {
       window.fbq("track", "Lead");
     }
   }, []);
+
+    useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const countryParam = params.get("country");
+    if (countryParam) {
+      setCountry(countryParam.toLowerCase().trim());
+    }
+  }, []);
+
 
   return (
     <>
@@ -94,44 +104,50 @@ export default function ThankYou() {
         </div>
       </div>
     </div>
-      {/* Dubai Hills Estate Ireland */}
-      <Script id="lead-submission-dhe-ir-en" strategy="afterInteractive">
-        {`
-          window.gtag('event', 'lead_submission_dhe_ir_en', {
-            lead_language: 'english',
-            project_name: 'dubai_hills_estate',
-            landing_page: 'dhe_en',
-            currency: 'AED',
-            value: 303
-          });
-        `}
-      </Script>
+      {/* 🇮🇳 India */}
+      {country === "india" && (
+        <Script id="lead-submission-dhe-ind-en" strategy="afterInteractive">
+          {`
+            window.gtag('event', 'lead_submission_dhe_ind_en', {
+              lead_language: 'english',
+              project_name: 'dubai_hills_estate',
+              landing_page: 'dhe_en',
+              currency: 'AED',
+              value: 301
+            });
+          `}
+        </Script>
+      )}
 
-      {/* Dubai Hills Estate UK */}
-      <Script id="lead-submission-dhe-uk-en" strategy="afterInteractive">
-        {`
-          window.gtag('event', 'lead_submission_dhe_uk_en', {
-            lead_language: 'english',
-            project_name: 'dubai_hills_estate',
-            landing_page: 'dhe_en',
-            currency: 'AED',
-            value: 302
-          });
-        `}
-      </Script>
+      {/* 🇬🇧 UK */}
+      {(country === "uk" || !country) && (
+        <Script id="lead-submission-dhe-uk-en" strategy="afterInteractive">
+          {`
+            window.gtag('event', 'lead_submission_dhe_uk_en', {
+              lead_language: 'english',
+              project_name: 'dubai_hills_estate',
+              landing_page: 'dhe_en',
+              currency: 'AED',
+              value: 302
+            });
+          `}
+        </Script>
+      )}
 
-      {/* Dubai Hills Estate India */}
-      <Script id="lead-submission-dhe-ind-en" strategy="afterInteractive">
-        {`
-          window.gtag('event', 'lead_submission_dhe_ind_en', {
-            lead_language: 'english',
-            project_name: 'dubai_hills_estate',
-            landing_page: 'dhe_en',
-            currency: 'AED',
-            value: 301
-          });
-        `}
-      </Script>
+      {/* 🇮🇪 Ireland */}
+      {country === "ireland" && (
+        <Script id="lead-submission-dhe-ir-en" strategy="afterInteractive">
+          {`
+            window.gtag('event', 'lead_submission_dhe_ir_en', {
+              lead_language: 'english',
+              project_name: 'dubai_hills_estate',
+              landing_page: 'dhe_en',
+              currency: 'AED',
+              value: 303
+            });
+          `}
+        </Script>
+      )}
     
       </>
   );
