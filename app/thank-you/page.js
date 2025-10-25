@@ -94,18 +94,45 @@ export default function ThankYou() {
         </div>
       </div>
     </div>
-     {/* ✅ Google Analytics Event Script */}
-     <Script id="lead-submission-dubai-hills-en" strategy="afterInteractive">
-      {`
-        window.gtag('event', 'lead_submission_dubai_estate_hills_en', {
-          lead_language: 'english',
-          project_name: 'duba_estate_hills',
-          landing_page: 'deh_en',
-          currency: 'AED',
-          value: 250
-        });
-      `}
-    </Script>
+      {/* Dubai Hills Estate Ireland */}
+      <Script id="lead-submission-dhe-ir-en" strategy="afterInteractive">
+        {`
+          window.gtag('event', 'lead_submission_dhe_ir_en', {
+            lead_language: 'english',
+            project_name: 'dubai_hills_estate',
+            landing_page: 'dhe_en',
+            currency: 'AED',
+            value: 303
+          });
+        `}
+      </Script>
+
+      {/* Dubai Hills Estate UK */}
+      <Script id="lead-submission-dhe-uk-en" strategy="afterInteractive">
+        {`
+          window.gtag('event', 'lead_submission_dhe_uk_en', {
+            lead_language: 'english',
+            project_name: 'dubai_hills_estate',
+            landing_page: 'dhe_en',
+            currency: 'AED',
+            value: 302
+          });
+        `}
+      </Script>
+
+      {/* Dubai Hills Estate India */}
+      <Script id="lead-submission-dhe-ind-en" strategy="afterInteractive">
+        {`
+          window.gtag('event', 'lead_submission_dhe_ind_en', {
+            lead_language: 'english',
+            project_name: 'dubai_hills_estate',
+            landing_page: 'dhe_en',
+            currency: 'AED',
+            value: 301
+          });
+        `}
+      </Script>
+    
       </>
   );
 }

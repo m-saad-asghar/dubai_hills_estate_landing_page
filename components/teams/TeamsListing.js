@@ -21,19 +21,19 @@ export default function TeamsListing() {
  const images = [
   {
     id: 1,
-    src: "https://cdn.properties.emaar.com/wp-content/uploads/2025/05/HERO_1620X832_1-38.jpg",
+    src: "/assets/img/gallery/dubai_hills_estate_1.webp",
     alt: "Gallery Image 1",
     link: "#home",
   },
   {
     id: 2,
-    src: "https://cdn.properties.emaar.com/wp-content/uploads/2024/02/PARKSIDE_HILLS_DHE_HERO_C_1620x832.jpg",
+    src: "/assets/img/gallery/dubai_hills_estate_2.png",
     alt: "Gallery Image 2",
     link: "#home",
   },
    {
     id: 3,
-    src: "https://cdn.properties.emaar.com/wp-content/uploads/2024/10/HERO_1620X832_3-1.jpg",
+    src: "/assets/img/gallery/dubai_hills_estate_3.webp",
     alt: "Gallery Image 3",
     link: "#home",
   },
