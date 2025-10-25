@@ -278,8 +278,8 @@ IN DUBAI’S MOST SOUGH-AFTER LOCATIONS.</p>
       </div>
       <div className='resp_usd'>
         <p className="down_styling">
-  *USD 436,000 / EUR 375,000 {!["uk", "ireland", "unitedkingdom", "britain"].includes(country) && (
-        <span className="line-break">/ GBP 324K.*</span>
+  USD 436,000 / EUR 375,000 {!["uk", "ireland", "unitedkingdom", "britain"].includes(country) && (
+        <span className="line-break">/ GBP 324K</span>
       )}
 </p>
 

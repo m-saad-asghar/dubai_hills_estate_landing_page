@@ -18,22 +18,22 @@ export default function TeamsListing() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  const images = [
+ const images = [
   {
     id: 1,
-    src: "https://cdn.properties.emaar.com/wp-content/uploads/2025/05/VIDA_RH_DHE_HOMEPAGE_BANNER_1920x1080-706x385.jpg",
+    src: "https://cdn.properties.emaar.com/wp-content/uploads/2025/05/HERO_1620X832_1-38.jpg",
     alt: "Gallery Image 1",
     link: "#home",
   },
   {
     id: 2,
-    src: "https://cdn.properties.emaar.com/wp-content/uploads/2024/02/PARKSIDE_HILLS_DHE_HERO_C_1620x832-706x385.jpg",
+    src: "https://cdn.properties.emaar.com/wp-content/uploads/2024/02/PARKSIDE_HILLS_DHE_HERO_C_1620x832.jpg",
     alt: "Gallery Image 2",
     link: "#home",
   },
    {
     id: 3,
-    src: "https://cdn.properties.emaar.com/wp-content/uploads/2024/10/HERO_1620X832_3-706x385.jpg",
+    src: "https://cdn.properties.emaar.com/wp-content/uploads/2024/10/HERO_1620X832_3-1.jpg",
     alt: "Gallery Image 3",
     link: "#home",
   },
