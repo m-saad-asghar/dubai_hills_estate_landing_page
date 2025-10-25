@@ -6,7 +6,7 @@ export default function Footer1() {
     return (
         <>
             {/*Start Footer One */}
-            <footer className="footer-one" id="emaar-footer">
+            <footer className="footer-one" id="footer">
                 {/* <div className="shape1"><img className="float-bob-y" src="assets/img/shape/footer-v1-shape1.png" alt=""/></div> */}
                 {/*Start Footer Main */}
                 <div className="footer-main">

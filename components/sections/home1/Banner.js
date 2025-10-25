@@ -70,11 +70,11 @@ export default function Banner() {
       const normalized = country.toLowerCase().replace(/\s+/g, "");
 
       if (normalized === "india") {
-        setPrice("₹38.24L.*");
+        setPrice("₹4.06 Cr.*");
       } else if (["uk", "ireland"].includes(normalized)) {
         setPrice("GBP 324K.*");
       } else {
-        setPrice("AED 1.6M.*");
+        setPrice("AED 1.7M.*");
       }
     }
     
