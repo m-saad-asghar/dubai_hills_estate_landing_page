@@ -120,7 +120,7 @@ export default function ThankYou() {
       )}
 
       {/* 🇬🇧 UK */}
-      {(country === "uk" || !country) && (
+      {(country === "uk") && (
         <Script id="lead-submission-dhe-uk-en" strategy="afterInteractive">
           {`
             window.gtag('event', 'lead_submission_dhe_uk_en', {
