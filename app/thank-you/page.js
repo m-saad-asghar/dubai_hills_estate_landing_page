@@ -1,21 +1,18 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { FaCheckCircle } from 'react-icons/fa';
-import Script from 'next/script';
-import { useSearchParams } from 'next/navigation';
-
 
 export default function ThankYou() {
   const router = useRouter();
-  const [progress, setProgress] = useState(0);
-  const [country, setCountry] = useState("");
   const searchParams = useSearchParams();
-  const rawCountry = searchParams.get('country');
+  const [progress, setProgress] = useState(0);
+  const [country, setCountry] = useState('');
 
+  // Progress bar + redirect
   useEffect(() => {
     const interval = 50; // update every 50ms
-    const increment = 100 / (4000 / interval); // 5 seconds total
+    const increment = 100 / (4000 / interval); // 4 seconds total
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -26,7 +23,6 @@ export default function ThankYou() {
       });
     }, interval);
 
-    // redirect after 5 seconds
     const redirectTimer = setTimeout(() => {
       router.back();
     }, 4000);
@@ -37,24 +33,50 @@ export default function ThankYou() {
     };
   }, [router]);
 
+  // Facebook Pixel (Lead)
   useEffect(() => {
     if (window.fbq) {
-      window.fbq("track", "Lead");
+      window.fbq('track', 'Lead');
     }
   }, []);
 
-    useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const countryParam = params.get("country");
-    if (countryParam) {
-      setCountry(countryParam.toLowerCase().trim());
+  // Detect country from URL
+  useEffect(() => {
+    const c = searchParams.get('country');
+    if (c) {
+      setCountry(c.toLowerCase().trim());
     }
-  }, []);
+  }, [searchParams]);
 
+  // ✅ Fire correct Google Analytics event
+  useEffect(() => {
+    if (!country || !window.gtag) return;
+
+    let eventName = 'lead_submission_dhe_uk_en'; // Default
+    let value = 306;
+
+    if (country === 'india') {
+      eventName = 'lead_submission_dhe_ind_en';
+      value = 307;
+    } else if (country === 'ireland') {
+      eventName = 'lead_submission_dhe_ir_en';
+      value = 308;
+    } else if (country === 'uk') {
+      eventName = 'lead_submission_dhe_uk_en';
+      value = 306;
+    }
+
+    window.gtag('event', eventName, {
+      lead_language: 'english',
+      project_name: 'dubai_hills_estate',
+      landing_page: 'dhe_en',
+      currency: 'AED',
+      value,
+    });
+  }, [country]);
 
   return (
-    <>
-       <div
+    <div
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -63,7 +85,14 @@ export default function ThankYou() {
         height: '100vh',
       }}
     >
-      <div style={{ textAlign: 'center', padding: '0 1rem', width: '100%', maxWidth: '400px' }}>
+      <div
+        style={{
+          textAlign: 'center',
+          padding: '0 1rem',
+          width: '100%',
+          maxWidth: '400px',
+        }}
+      >
         <FaCheckCircle size={100} color="#9f8151" />
         <h1
           style={{
@@ -107,47 +136,5 @@ export default function ThankYou() {
         </div>
       </div>
     </div>
-
-    {rawCountry?.toLowerCase() === "india" ? (
-        // For India
-       <Script id="lead-submission-dhe-ind" strategy="afterInteractive">
-{`
-  window.gtag('event', 'lead_submission_dhe_ind', {
-    lead_language: 'english',
-    project_name: 'dubai_hills_estate',
-    landing_page: 'dhe_ind',
-    currency: 'AED',
-    value: 307
-  });
-`}
-</Script>
-      ) : (
-        // Default (UK or others)
-        <Script id="lead-submission-dhe-uk-en" strategy="afterInteractive">
-{`
-  window.gtag('event', 'lead_submission_dhe_uk_en', {
-    lead_language: 'english',
-    project_name: 'dubai_hills_estate',
-    landing_page: 'dhe_uk_en',
-    currency: 'AED',
-    value: 306
-  });
-`}
-</Script>
-      )}
-      
-      {/* <Script id="lead-submission-dhe-en" strategy="afterInteractive">
-{`
-  window.gtag('event', 'lead_submission_dhe_en', {
-    lead_language: 'english',
-    project_name: 'dubai_hills_estate',
-    landing_page: 'dhe_en',
-    currency: 'AED',
-    value: 305
-  });
-`}
-</Script> */}
-    
-      </>
   );
 }
