@@ -38,12 +38,8 @@ export default function Banner() {
      const [disableBtn, setDisableBtn] = useState(false);
      const [price, setPrice] = useState("AED 1.6M.*");
      const searchParams = useSearchParams();
-     const [countryValue, setCountryValue] = useState('');
-     const [rawCountry, setRawCountry] = useState('');
   const [originValue, setOriginValue] = useState('');
     const [phoneError, setPhoneError] = useState('')
-    const [defaultCountry, setDefaultCountry] = useState("ae"); // default = Dubai
-    const country = searchParams.get('country');
     const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -53,7 +49,6 @@ export default function Banner() {
   
   useEffect(() => {
     const origin = searchParams.get('origin');
-    const country = searchParams.get('country');
 
     if (origin) {
       if (origin.toLowerCase() === 'meta') {
@@ -66,41 +61,7 @@ export default function Banner() {
     } else {
       setOriginValue('');
     }
-
-    if (country) {
-      const normalized = country.toLowerCase().replace(/\s+/g, "");
-
-      if (normalized === "india") {
-        setPrice("₹3.83Cr.*");
-      } else if (["uk", "ireland"].includes(normalized)) {
-        setPrice("GBP 324K.*");
-      } else {
-        setPrice("AED 1.6M.*");
-      }
-    }
     
-if (country) {
-      const countryMap = {
-        india: "in",
-        uk: "gb",
-        ireland: "gb",
-        ae: "ae",
-      };
-
-      const mapped = countryMap[country.toLowerCase()];
-      if (mapped) setDefaultCountry(mapped);
-    }
-
-    if (country) {
-      setRawCountry(country);
-  const formattedCountry = country
-    .replace(/_/g, ' ')
-    .toLowerCase()
-    .replace(/\b\w/g, (char) => char.toUpperCase());
-  setCountryValue(formattedCountry);
-} else {
-      setCountryValue('');
-    }
   }, [searchParams]);
 
   const handleChange = (e) => {
@@ -129,7 +90,7 @@ if (country) {
   const payload_email = {
     LANDING_PAGE: "Dubai Hills Estate EN Landing Page",
     ORIGIN: originValue,
-    COUNTRY: countryValue,
+    COUNTRY: "British",
     NAME: formData.name,
     PHONE_TEXT: formData.phone,
     EMAIL: formData.email,
@@ -157,7 +118,7 @@ if (country) {
       SOURCE_ID: "WEB",
       ASSIGNED_BY_ID: 25,
       UF_CRM_1754652292782: "Dubai Hills Estate EN Landing Page",
-      UF_CRM_1761206533: countryValue,
+      UF_CRM_1761206533: "British",
     },
     params: {
       REGISTER_SONET_EVENT: "Y",
@@ -196,12 +157,7 @@ if (country) {
    setDisableBtn(false);
 
     if (result.result) {
-
- if(rawCountry) {
-   const url = `/thank-you?country=${encodeURIComponent(rawCountry)}`;
-  router.push(url);
- }
-      // router.push('/thank-you');
+      router.push('/thank-you');
       setFormData({
         name: "",
         phone: "",
@@ -259,7 +215,7 @@ if (country) {
         <div className='banner_text_container'>
           <p className='heading_middle heading'>DUBAI HILLS ESTATE</p>
           <h1 className="heading_middle sub_heading">
-  Luxury Homes Starting from <span className="line-break">{price}</span>
+  Luxury Homes Starting from <span className="line-break">GBP 324K.*</span>
 </h1>
 
         <p className='heading_middle content'>EARN EXCEPTIONAL RETURNS ON YOUR PROPERTY INVESTMENT
@@ -285,9 +241,7 @@ IN DUBAI’S MOST SOUGH-AFTER LOCATIONS.</p>
       </div>
       <div className='resp_usd'>
         <p className="down_styling">
-  USD 436,000 / EUR 375,000 {!["uk", "ireland", "unitedkingdom", "britain"].includes(country) && (
-        <span className="line-break">/ GBP 324K</span>
-      )}
+  USD 436,000 / EUR 375,000
 </p>
 
       </div>
@@ -353,7 +307,7 @@ IN DUBAI’S MOST SOUGH-AFTER LOCATIONS.</p>
       </label>
         <PhoneInput
   name="phone"
-  country={defaultCountry}
+  country="gb"
   value={formData.phone}
   onChange={(value) =>
     setFormData({

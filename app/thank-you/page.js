@@ -1,19 +1,18 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { FaCheckCircle } from 'react-icons/fa';
+import Script from 'next/script';
+
 
 export default function ThankYou() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [progress, setProgress] = useState(0);
-  const [country, setCountry] = useState('');
-  const [eventFired, setEventFired] = useState(false); // ✅ prevent multiple fires
+  const [country, setCountry] = useState("");
 
-  // Progress bar + redirect
   useEffect(() => {
-    const interval = 50;
-    const increment = 100 / (4000 / interval);
+    const interval = 50; // update every 50ms
+    const increment = 100 / (4000 / interval); // 5 seconds total
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -24,6 +23,7 @@ export default function ThankYou() {
       });
     }, interval);
 
+    // redirect after 5 seconds
     const redirectTimer = setTimeout(() => {
       router.back();
     }, 4000);
@@ -34,52 +34,24 @@ export default function ThankYou() {
     };
   }, [router]);
 
-  // Facebook Pixel
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'Lead');
+    if (window.fbq) {
+      window.fbq("track", "Lead");
     }
   }, []);
 
-  // Get country from URL
-  useEffect(() => {
-    const c = searchParams.get('country');
-    if (c) setCountry(c.toLowerCase().trim());
-  }, [searchParams]);
+    useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const countryParam = params.get("country");
+    if (countryParam) {
+      setCountry(countryParam.toLowerCase().trim());
+    }
+  }, []);
 
-  // ✅ Fire GA event once (only when ready)
-  useEffect(() => {
-    if (!country || eventFired) return;
-
-    const interval = setInterval(() => {
-      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-        let eventName = 'lead_submission_dhe_uk_en';
-        let value = 306;
-
-        if (country === 'india') {
-          eventName = 'lead_submission_dhe_ind_en';
-          value = 307;
-        }
-
-        console.log('✅ GA Event Fired:', eventName, 'for country:', country);
-        window.gtag('event', eventName, {
-          lead_language: 'english',
-          project_name: 'dubai_hills_estate',
-          landing_page: `dhe_${country}`,
-          currency: 'AED',
-          value,
-        });
-
-        setEventFired(true);
-        clearInterval(interval);
-      }
-    }, 300);
-
-    return () => clearInterval(interval);
-  }, [country, eventFired]);
 
   return (
-    <div
+    <>
+       <div
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -88,14 +60,7 @@ export default function ThankYou() {
         height: '100vh',
       }}
     >
-      <div
-        style={{
-          textAlign: 'center',
-          padding: '0 1rem',
-          width: '100%',
-          maxWidth: '400px',
-        }}
-      >
+      <div style={{ textAlign: 'center', padding: '0 1rem', width: '100%', maxWidth: '400px' }}>
         <FaCheckCircle size={100} color="#9f8151" />
         <h1
           style={{
@@ -117,6 +82,7 @@ export default function ThankYou() {
           We will get back to you very soon.
         </p>
 
+        {/* Progress Bar */}
         <div
           style={{
             marginTop: '2rem',
@@ -138,5 +104,19 @@ export default function ThankYou() {
         </div>
       </div>
     </div>
+      
+      <Script id="lead-submission-dhe-en" strategy="afterInteractive">
+{`
+  window.gtag('event', 'lead_submission_dhe_en', {
+    lead_language: 'english',
+    project_name: 'dubai_hills_estate',
+    landing_page: 'dhe_en',
+    currency: 'AED',
+    value: 305
+  });
+`}
+</Script>
+    
+      </>
   );
 }
