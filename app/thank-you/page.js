@@ -8,11 +8,12 @@ export default function ThankYou() {
   const searchParams = useSearchParams();
   const [progress, setProgress] = useState(0);
   const [country, setCountry] = useState('');
+  const [eventFired, setEventFired] = useState(false); // ✅ prevent multiple fires
 
   // Progress bar + redirect
   useEffect(() => {
-    const interval = 50; // update every 50ms
-    const increment = 100 / (4000 / interval); // 4 seconds total
+    const interval = 50;
+    const increment = 100 / (4000 / interval);
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -33,47 +34,49 @@ export default function ThankYou() {
     };
   }, [router]);
 
-  // Facebook Pixel (Lead)
+  // Facebook Pixel
   useEffect(() => {
-    if (window.fbq) {
+    if (typeof window !== 'undefined' && window.fbq) {
       window.fbq('track', 'Lead');
     }
   }, []);
 
-  // Detect country from URL
+  // Get country from URL
   useEffect(() => {
     const c = searchParams.get('country');
-    if (c) {
-      setCountry(c.toLowerCase().trim());
-    }
+    if (c) setCountry(c.toLowerCase().trim());
   }, [searchParams]);
 
-  // ✅ Fire correct Google Analytics event
+  // ✅ Fire GA event once (only when ready)
   useEffect(() => {
-    if (!country || !window.gtag) return;
+    if (!country || eventFired) return;
 
-    let eventName = 'lead_submission_dhe_uk_en'; // Default
-    let value = 306;
+    const interval = setInterval(() => {
+      if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+        let eventName = 'lead_submission_dhe_uk_en';
+        let value = 306;
 
-    if (country === 'india') {
-      eventName = 'lead_submission_dhe_ind_en';
-      value = 307;
-    } else if (country === 'ireland') {
-      eventName = 'lead_submission_dhe_ir_en';
-      value = 308;
-    } else if (country === 'uk') {
-      eventName = 'lead_submission_dhe_uk_en';
-      value = 306;
-    }
+        if (country === 'india') {
+          eventName = 'lead_submission_dhe_ind_en';
+          value = 307;
+        }
 
-    window.gtag('event', eventName, {
-      lead_language: 'english',
-      project_name: 'dubai_hills_estate',
-      landing_page: 'dhe_en',
-      currency: 'AED',
-      value,
-    });
-  }, [country]);
+        console.log('✅ GA Event Fired:', eventName, 'for country:', country);
+        window.gtag('event', eventName, {
+          lead_language: 'english',
+          project_name: 'dubai_hills_estate',
+          landing_page: `dhe_${country}`,
+          currency: 'AED',
+          value,
+        });
+
+        setEventFired(true);
+        clearInterval(interval);
+      }
+    }, 300);
+
+    return () => clearInterval(interval);
+  }, [country, eventFired]);
 
   return (
     <div
@@ -114,7 +117,6 @@ export default function ThankYou() {
           We will get back to you very soon.
         </p>
 
-        {/* Progress Bar */}
         <div
           style={{
             marginTop: '2rem',
