@@ -105,14 +105,14 @@ export default function ThankYou() {
       </div>
     </div>
       
-      <Script id="lead-submission-dhe-en" strategy="afterInteractive">
+    <Script id="lead-submission-dhe-uk-en" strategy="afterInteractive">
 {`
-  window.gtag('event', 'lead_submission_dhe_en', {
+  window.gtag('event', 'lead_submission_dhe_uk_en', {
     lead_language: 'english',
     project_name: 'dubai_hills_estate',
-    landing_page: 'dhe_en',
+    landing_page: 'dhe_uk_en',
     currency: 'AED',
-    value: 305
+    value: 306
   });
 `}
 </Script>
