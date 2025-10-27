@@ -39,6 +39,7 @@ export default function Banner() {
      const [price, setPrice] = useState("AED 1.6M.*");
      const searchParams = useSearchParams();
      const [countryValue, setCountryValue] = useState('');
+     const [rawCountry, setRawCountry] = useState('');
   const [originValue, setOriginValue] = useState('');
     const [phoneError, setPhoneError] = useState('')
     const [defaultCountry, setDefaultCountry] = useState("ae"); // default = Dubai
@@ -91,6 +92,7 @@ if (country) {
     }
 
     if (country) {
+      setRawCountry(country);
   const formattedCountry = country
     .replace(/_/g, ' ')
     .toLowerCase()
@@ -194,7 +196,12 @@ if (country) {
    setDisableBtn(false);
 
     if (result.result) {
-      router.push('/thank-you');
+
+ if(rawCountry) {
+   const url = `/thank-you?country=${encodeURIComponent(rawCountry)}`;
+  router.push(url);
+ }
+      // router.push('/thank-you');
       setFormData({
         name: "",
         phone: "",

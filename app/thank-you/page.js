@@ -3,12 +3,15 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FaCheckCircle } from 'react-icons/fa';
 import Script from 'next/script';
+import { useSearchParams } from 'next/navigation';
 
 
 export default function ThankYou() {
   const router = useRouter();
   const [progress, setProgress] = useState(0);
   const [country, setCountry] = useState("");
+  const searchParams = useSearchParams();
+  const rawCountry = searchParams.get('country');
 
   useEffect(() => {
     const interval = 50; // update every 50ms
@@ -104,8 +107,36 @@ export default function ThankYou() {
         </div>
       </div>
     </div>
+
+    {rawCountry?.toLowerCase() === "india" ? (
+        // For India
+       <Script id="lead-submission-dhe-ind" strategy="afterInteractive">
+{`
+  window.gtag('event', 'lead_submission_dhe_ind', {
+    lead_language: 'english',
+    project_name: 'dubai_hills_estate',
+    landing_page: 'dhe_ind',
+    currency: 'AED',
+    value: 307
+  });
+`}
+</Script>
+      ) : (
+        // Default (UK or others)
+        <Script id="lead-submission-dhe-uk-en" strategy="afterInteractive">
+{`
+  window.gtag('event', 'lead_submission_dhe_uk_en', {
+    lead_language: 'english',
+    project_name: 'dubai_hills_estate',
+    landing_page: 'dhe_uk_en',
+    currency: 'AED',
+    value: 306
+  });
+`}
+</Script>
+      )}
       
-      <Script id="lead-submission-dhe-en" strategy="afterInteractive">
+      {/* <Script id="lead-submission-dhe-en" strategy="afterInteractive">
 {`
   window.gtag('event', 'lead_submission_dhe_en', {
     lead_language: 'english',
@@ -115,7 +146,7 @@ export default function ThankYou() {
     value: 305
   });
 `}
-</Script>
+</Script> */}
     
       </>
   );
